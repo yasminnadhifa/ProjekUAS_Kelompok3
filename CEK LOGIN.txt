@@ -1,0 +1,38 @@
+ if (fs.cekLogin() == "Admin")
+                    {
+                        this.Hide();
+                        Pendaftaran hm = new Pendaftaran();
+                        hm.Show();
+                    }
+                    else
+                    {
+                        this.Hide();
+                        Admin_Testimonial hm = new Admin_Testimonial();
+                        hm.Show();
+                    }
+
+
+
+        public string cekLogin()
+        {
+            string role = null;
+
+    
+            conn = koneksi.Conn;
+            MySqlCommand command = conn.CreateCommand();
+
+            conn.Open();
+            string sql = "select role from user";
+            command.CommandText = sql;
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                if ((reader.GetString(4) == role))
+                {
+                    return reader.GetString(4);
+                }
+            }
+            conn.Close();
+            return "salah";
+
+        }

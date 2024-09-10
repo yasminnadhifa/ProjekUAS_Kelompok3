@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="uasbadModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="alat_musik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="program_kelas" Type="nvarchar" MaxLength="50" />
+          <Property Name="iuran" Type="nvarchar" MaxLength="50" />
+          <Property Name="durasi" Type="nvarchar" MaxLength="50" />
+          <Property Name="keterangan" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="pembayaran">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="pk" Type="nvarchar" MaxLength="50" />
+          <Property Name="bulan" Type="nvarchar" MaxLength="50" />
+          <Property Name="total" Type="float" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="iuran" Type="nvarchar" MaxLength="50" />
+          <Property Name="nama" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="pendaftaran">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nama" Type="nvarchar" MaxLength="50" />
+          <Property Name="tanggal" Type="nvarchar" MaxLength="50" />
+          <Property Name="jeniskelamin" Type="nvarchar" MaxLength="50" />
+          <Property Name="nohp" Type="nvarchar" MaxLength="50" />
+          <Property Name="pk" Type="nvarchar" MaxLength="50" />
+          <Property Name="hari" Type="nvarchar" MaxLength="50" />
+          <Property Name="tipe" Type="nvarchar" MaxLength="50" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="testi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ulasan" Type="nvarchar(max)" />
+          <Property Name="sk" Type="nvarchar(max)" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="role" Type="nvarchar" MaxLength="50" />
+          <Property Name="nama" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="uasbadModelStoreContainer">
+          <EntitySet Name="alat_musik" EntityType="Self.alat_musik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pembayaran" EntityType="Self.pembayaran" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pendaftaran" EntityType="Self.pendaftaran" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="testi" EntityType="Self.testi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="uasbadModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="alat_musik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="program_kelas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="iuran" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="durasi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="keterangan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="pembayaran">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bulan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="total" Type="Double" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="iuran" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="pendaftaran">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tanggal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jeniskelamin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nohp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hari" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tipe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="testi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ulasan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sk" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="uasbadEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="alat_musik" EntityType="Self.alat_musik" />
+          <EntitySet Name="pembayarans" EntityType="Self.pembayaran" />
+          <EntitySet Name="pendaftarans" EntityType="Self.pendaftaran" />
+          <EntitySet Name="testis" EntityType="Self.testi" />
+          <EntitySet Name="users" EntityType="Self.user" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="uasbadModelStoreContainer" CdmEntityContainer="uasbadEntities1">
+          <EntitySetMapping Name="alat_musik">
+            <EntityTypeMapping TypeName="uasbadModel.alat_musik">
+              <MappingFragment StoreEntitySet="alat_musik">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="program_kelas" ColumnName="program_kelas" />
+                <ScalarProperty Name="iuran" ColumnName="iuran" />
+                <ScalarProperty Name="durasi" ColumnName="durasi" />
+                <ScalarProperty Name="keterangan" ColumnName="keterangan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pembayarans">
+            <EntityTypeMapping TypeName="uasbadModel.pembayaran">
+              <MappingFragment StoreEntitySet="pembayaran">
+                <ScalarProperty Name="nama" ColumnName="nama" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pk" ColumnName="pk" />
+                <ScalarProperty Name="bulan" ColumnName="bulan" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="iuran" ColumnName="iuran" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pendaftarans">
+            <EntityTypeMapping TypeName="uasbadModel.pendaftaran">
+              <MappingFragment StoreEntitySet="pendaftaran">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nama" ColumnName="nama" />
+                <ScalarProperty Name="tanggal" ColumnName="tanggal" />
+                <ScalarProperty Name="jeniskelamin" ColumnName="jeniskelamin" />
+                <ScalarProperty Name="nohp" ColumnName="nohp" />
+                <ScalarProperty Name="pk" ColumnName="pk" />
+                <ScalarProperty Name="hari" ColumnName="hari" />
+                <ScalarProperty Name="tipe" ColumnName="tipe" />
+                <ScalarProperty Name="username" ColumnName="username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="testis">
+            <EntityTypeMapping TypeName="uasbadModel.testi">
+              <MappingFragment StoreEntitySet="testi">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ulasan" ColumnName="ulasan" />
+                <ScalarProperty Name="sk" ColumnName="sk" />
+                <ScalarProperty Name="username" ColumnName="username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="uasbadModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="nama" ColumnName="nama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
